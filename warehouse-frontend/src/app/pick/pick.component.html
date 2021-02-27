@@ -1,0 +1,8 @@
+<div class="ui center aligned compact padded raised segment grid">
+  <div class="ui padded row">
+    <strong>{{orderView.order.productId}}</strong>&nbsp; for&nbsp;  <strong>{{orderView.order.buyerName}}</strong>&nbsp; to&nbsp;  <strong>{{orderView.order.buyerAddress}}</strong>
+  </div>
+  <div class="ui primary button" *ngFor="let pallet of orderView.pallets" (click)="pickFromPallet(pallet)">
+    <strong>{{pallet.id}}</strong>&nbsp;  in&nbsp;  <strong>{{pallet.place}}</strong>
+  </div>
+</div>

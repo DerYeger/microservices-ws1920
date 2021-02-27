@@ -1,0 +1,21 @@
+<div class="ui one column center aligned page grid">
+  <div class="row">
+    <div class="ui fluid stackable menu">
+      <div class="header item">
+        Welcome
+        {{userService.currentUser ? userService.currentUser.name : "User"}}
+      </div>
+      <a *ngIf="!userService.currentUser" class="ui item grey" routerLink="/login" routerLinkActive="active">Login</a>
+      <a *ngIf="userService.currentUser" class="ui item grey" routerLink="/shopping"
+         routerLinkActive="active">Shopping</a>
+      <a *ngIf="userService.currentUser" class="ui item grey" routerLink="/delivery"
+         routerLinkActive="active">Delivery</a>
+      <div class="right menu">
+        <a (click)="model.resetModel()" *ngIf="userService.currentUser" class="item" routerLink="/login">Logout</a>
+      </div>
+    </div>
+  </div>
+  <div class="padded row">
+    <router-outlet></router-outlet>
+  </div>
+</div>

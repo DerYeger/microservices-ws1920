@@ -1,0 +1,29 @@
+<div class="ui center aligned compact padded raised segment grid">
+  <div class="ui padded row">
+    <div class="ui label">
+      {{product.name}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="ui labeled input">
+      <div class="ui fixed label">
+        Name
+      </div>
+      <input [(ngModel)]="nameIn" id="name-in" placeholder="Name" type="text">
+    </div>
+  </div>
+  <div class="row">
+    <div class="ui labeled input">
+      <div class="ui fixed label">
+        Address
+      </div>
+      <input [(ngModel)]="addressIn" id="address-in" placeholder="Address" type="text">
+    </div>
+  </div>
+  <div class="ui padded row">
+    <button (click)="orderProduct()" [disabled]="!inputIsValid(nameIn, addressIn)" class="ui primary button">
+      Buy
+    </button>
+  </div>
+</div>
+

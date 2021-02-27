@@ -1,0 +1,23 @@
+<table class="ui compact raised segment five column celled selectable stacking striped table">
+  <thead>
+  <tr>
+    <th colspan="2">
+      Orders
+    </th>
+  </tr>
+  <tr>
+    <th>ProductID</th>
+    <th>Locations</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr (click)="navigateToPick(orderView)" *ngFor="let orderView of orderViews">
+    <td class="collapsing">{{orderView.order.productId}}</td>
+    <td class="collapsing">
+      <div *ngFor="let pallet of orderView.pallets">
+        {{pallet.place }}
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>

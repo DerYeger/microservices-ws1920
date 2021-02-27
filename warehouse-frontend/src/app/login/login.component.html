@@ -1,0 +1,24 @@
+<div class="ui center aligned compact padded raised segment grid">
+  <div class="row">
+    <div class="ui labeled input">
+      <div class="ui fixed label">
+        UserID
+      </div>
+      <input [(ngModel)]="userIdIn" id="user-id-input" placeholder="UserID" type="text">
+    </div>
+  </div>
+  <div class="row">
+    <div class="ui labeled input">
+      <div class="ui fixed label">
+        Name
+      </div>
+      <input [(ngModel)]="userNameIn" id="name-input" placeholder="Name" type="text">
+    </div>
+  </div>
+  <div class="row">
+    <button (click)="loginAction()" [disabled]="!inputIsValid(userIdIn, userNameIn)" class="ui primary button"
+            id="login-button">
+      Login
+    </button>
+  </div>
+</div>

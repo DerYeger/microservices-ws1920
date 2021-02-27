@@ -1,0 +1,43 @@
+<div class="ui center aligned compact padded raised segment grid">
+  <div class="row">
+    <div class="ui labeled input">
+      <div class="ui fixed label">
+        PalletID
+      </div>
+      <input [(ngModel)]="palletIdIn" id="pallet-id-input" placeholder="PalletID" type="text">
+    </div>
+  </div>
+  <div class="row">
+    <div class="ui labeled input">
+      <div class="ui fixed label">
+        Product
+      </div>
+      <input [(ngModel)]="productIn" id="product-input" placeholder="Product" type="text">
+    </div>
+  </div>
+  <div class="row">
+    <div class="ui labeled input">
+      <div class="ui fixed label">
+        Items
+      </div>
+      <input (input)="ensureAmountInIsPositive()" [(ngModel)]="amountIn" id="items-input" min="0" placeholder="Items"
+             type="number">
+    </div>
+  </div>
+  <div class="row">
+    <div class="ui labeled input">
+      <div class="ui fixed label">
+        Priority
+      </div>
+      <input [(ngModel)]="priorityIn" id="priority-input" placeholder="Priority" type="text">
+    </div>
+  </div>
+  <div class="row">
+    <button (click)="confirmAction()"
+            [disabled]="!inputIsValid(palletIdIn, productIn, (amountIn ? amountIn.toString() : null), priorityIn)"
+            class="ui primary button"
+            id="confirm-button">
+      Confirm
+    </button>
+  </div>
+</div>

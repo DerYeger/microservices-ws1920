@@ -1,0 +1,31 @@
+<table class="ui compact raised segment five column celled selectable stacking striped table">
+  <thead>
+  <tr>
+    <th colspan="8">
+      Pallets
+    </th>
+  </tr>
+  <tr>
+    <th>ID</th>
+    <th>Product</th>
+    <th>Amount</th>
+    <th>Priority</th>
+    <th>Place</th>
+    <th>State</th>
+    <th>User</th>
+    <th>Last modified</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr (click)="navigateToStore(pallet)" *ngFor="let pallet of pallets">
+    <td class="collapsing">{{pallet.id}}</td>
+    <td class="collapsing">{{pallet.product}}</td>
+    <td class="collapsing">{{pallet.amount}}</td>
+    <td class="collapsing">{{pallet.priority}}</td>
+    <td class="collapsing">{{pallet.place}}</td>
+    <td class="collapsing">{{pallet.state}}</td>
+    <td class="collapsing">{{pallet.user.name}}</td>
+    <td class="collapsing">{{pallet.lastModified}}</td>
+  </tr>
+  </tbody>
+</table>
